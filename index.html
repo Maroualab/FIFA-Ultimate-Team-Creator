@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Formation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header with logo -->
+    <nav>
+      <img src="images/logo fut.png" alt="logo" />
+    </nav>
+
+    <hr />
+    <!-- Formation select -->
+    <label for="formation">Select Formation:</label>
+    <select name="formation" id="formation">
+      <option value="4-3-3">4-3-3</option>
+      <option value="4-4-2">4-4-2</option>
+    </select>
+
+    <section id="field">
+      
+      <!-- Football field -->
+      <div id="football-field">
+        <button class="player-card" draggable="true">1</button>
+        <button class="player-card" draggable="true">2</button>
+        <button class="player-card" draggable="true">3</button>
+        <button class="player-card" draggable="true">4</button>
+        <button class="player-card" draggable="true">5</button>
+        <button class="player-card" draggable="true">6</button>
+        <button class="player-card" draggable="true">7</button>
+        <button class="player-card" draggable="true">8</button>
+        <button class="player-card" draggable="true">9</button>
+        <button class="player-card" draggable="true">10</button>
+        <button class="player-card" draggable="true">11</button>
+      </div>
+
+
+      <!-- Form -->
+
+   
+  <form id="player_info">
+    <label for="name">Full Name</label>
+    <input type="text" name="name" id="name" required />
+    <br>
+
+    <label for="position">Position</label>
+    <select name="position" id="position">
+      <option value="GK">GK</option>
+      <option value="CB">CB</option>
+      <option value="CM">CM</option>
+      <option value="CDM">CDM</option>
+      <option value="LM">LM</option>
+      <option value="RM">RM</option>
+      <option value="ST">ST</option>
+    </select>
+    <br>
+
+    <label for="nationality">Nationality</label>
+    <input type="text" name="nationality" id="nationality" />
+    <br>
+
+    <label for="club">Club</label>
+    <input type="text" name="club" id="club" />
+    <br>
+
+    <label for="rating">Rating</label>
+    <input type="number" name="rating" id="rating" />
+    <br>
+
+    <label for="pace">Pace</label>
+    <input type="number" name="pace" id="pace" />
+    <br>
+
+    <label for="shooting">Shooting</label>
+    <input type="number" name="shooting" id="shooting" />
+    <br>
+
+    <label for="passing">Passing</label>
+    <input type="number" name="passing" id="passing" />
+    <br>
+
+    <label for="dribbling">Dribbling</label>
+    <input type="number" name="dribbling" id="dribbling" />
+    <br>
+
+    <label for="defending">Defending</label>
+    <input type="number" name="defending" id="defending" />
+    <br>
+
+    <label for="physical">Physical</label>
+    <input type="number" name="physical" id="physical" />
+    <br>
+
+    <button type="submit">Add Player</button>
+    </section>
+
+
+
+    <div class="player-list" id="player-list">
+    <h2>Added Players</h2>
+  </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

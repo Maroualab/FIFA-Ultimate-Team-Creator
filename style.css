@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+
+#football-field {
+    display: grid;
+    width: 60%;
+    /* height: 600px; */
+    /* margin: 20px auto; */
+    background-color: #1ABA85;
+    position: relative;
+    border: 2px solid #ccc;
+}
+
+.player-card {
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.player-card:active {
+    cursor: grabbing;   
+}
+
+
+.player-card.drag-over {
+    background-color: #d4f0ff; 
+    border: 2px dashed #1ABA85; 
+}
+
+hr{
+    margin: 0 10px;
+}
+
+#field{
+    display: flex;
+    justify-content: space-around;
+}
