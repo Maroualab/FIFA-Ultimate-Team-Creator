@@ -1,56 +1,264 @@
-*{
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffe6f2; 
+  color: #7a1a46;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 20px;
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #7a1a46;
 }
 
+.field {
+  position: relative;
+  width: 40.625em; 
+  height: 100dvh;
 
-#football-field {
-    display: grid;
-    width: 60%;
-    /* height: 600px; */
-    /* margin: 20px auto; */
-    background-color: #1ABA85;
-    position: relative;
-    border: 2px solid #ccc;
+  /* margin: 0 auto; */
+  /* background: #eee; */
+  background-image: url("assets/1732785548303.jpg");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;  
+
+} 
+
+.position-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("assets/badge_2.png"); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+
+}
+
+.position {
+  width: 8.125em;
+  height: 8.625em;
+  /* background-color: #fff0f5;
+  border: 2px dashed #ff99c8;
+   */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  }
+
+.position-name {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: #7a1a46;
+}
+
+.position img {
+  max-width: 50px;
+  border-radius: 50%;
+}
+
+.player-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.club-logo {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+#player-selection {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffccdf; 
+  border: 2px solid #ff99c8; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(122, 26, 70, 0.2);
+  width: 100%;
+}
+
+#player-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* .player-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff0f5;
+  border: 1px solid #ff99c8;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+} */
+
+.player-item:hover {
+  background-color: #ffcce0;
+  transform: translateY(-2px);
+}
+.replacement-pool {
+  margin-top: 20px;
+  background-color: #ffe6f2;
+  padding: 10px;
+  border: 2px solid #ff99c8;
+  border-radius: 10px;
+}
+
+.replacement-player{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff0f5;
+  border: 1px solid #ff99c8;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.replacement-player img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.replacement-player:hover {
+  background-color: #ffcce0;
+  transform: translateY(-2px);
+}
+
+.position img {
+  max-width: 50px;
+  border-radius: 50%;
+}
+
+.position p {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #7a1a46;
+}
+
+/* .field{
+  width: 892px;
+  /* height: 731px; */
+
+
+.relative{
+  position: relative;
+}  
+
+.absolute{
+  position: absolute;
+}
+
+#cardlid1{
+  left: 33%;
+  top: 0;
+  background-image: url("assets/badge gk.png"); 
+
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  }
+
+
+/* .img_field{
+  width:900px; 
+  height:800px;
+  object-fit: contain;
+} */
+
+/* .relative {
+  position: relative;
+} */
+
+/* .field {
+  /* width: 892px; */
+  /* height: 731px; */
+
+
+
+.img_field {
+    /* height: 800px; */
+    object-fit: contain;
+    /* height: 100%; */
+    width: 100%;
+}
+
+.main_container{
+  display: flex ;
+justify-content: space-around;
+}
+
+.flag{
+  width : 30px;
+   position: absolute;
+    top: 10px;
+     left: 10px;
+}
+
+.logo{width: 50px; position: absolute; top: 10px; right: 10px;}
+
+
+.drag-over {
+  border: 2px dashed #1ABA85; /* Highlight the drop zone */
+  background-color: #f0f8ff; /* Light background */
+}
+
+#player-display {
+  margin-top: 20px;
+  background-color: #ffe6f2;
+  padding: 20px;
+  border: 2px solid #ff99c8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(122, 26, 70, 0.2);
 }
 
 .player-card {
-    width: 50px;
-    height: 50px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: grab;
-    text-align: center;
-    transition: background-color 0.2s;
+  background-color: #fff0f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.player-card:active {
-    cursor: grabbing;   
+.player-card ul {
+  list-style: none;
+  padding: 0;
 }
 
-
-.player-card.drag-over {
-    background-color: #d4f0ff; 
-    border: 2px dashed #1ABA85; 
+.player-card ul li {
+  font-size: 0.9em;
+  color: #7a1a46;
 }
 
-hr{
-    margin: 0 10px;
+#add-player-form{
+  /* display: ; */
 }
+.playerData{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex: 1 0 1;
+  gap: 5px;
 
-#field{
-    display: flex;
-    justify-content: space-around;
+}
+#position{
+  width: 177px;
 }

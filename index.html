@@ -3,106 +3,156 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Football Formation</title>
+    <title>Football Field Mockup</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
+
   <body>
-    <!-- Header with logo -->
-    <nav>
-      <img src="images/logo fut.png" alt="logo" />
-    </nav>
-
-    <hr />
-    <!-- Formation select -->
-    <label for="formation">Select Formation:</label>
-    <select name="formation" id="formation">
-      <option value="4-3-3">4-3-3</option>
-      <option value="4-4-2">4-4-2</option>
-    </select>
-
-    <section id="field">
+    <!-- style="display: none;" -->
+    <h1>Football Formation</h1>
+    <section class=" main_container">
       
-      <!-- Football field -->
-      <div id="football-field">
-        <button class="player-card" draggable="true">1</button>
-        <button class="player-card" draggable="true">2</button>
-        <button class="player-card" draggable="true">3</button>
-        <button class="player-card" draggable="true">4</button>
-        <button class="player-card" draggable="true">5</button>
-        <button class="player-card" draggable="true">6</button>
-        <button class="player-card" draggable="true">7</button>
-        <button class="player-card" draggable="true">8</button>
-        <button class="player-card" draggable="true">9</button>
-        <button class="player-card" draggable="true">10</button>
-        <button class="player-card" draggable="true">11</button>
+      <div class="field relative">
+      
+        <!-- Goalkeeper -->
+        <div class="position-container" id="cardlid1" style="top: 87%; left: 50%; transform: translate(-50%, -50%);">
+            <div class="position" data-position="GK" draggable="true"></div>
+          <p class="position-name">GK</p>
+        </div>
+      
+        <!-- Defenders -->
+        <div class="position-container" id="cardlid2" style="top: 70%; left: 20%; transform: translate(-50%, -50%);">
+          <div class="position" data-position="LB" draggable="true"></div>
+          <p class="position-name">LB</p>
+        </div>
+        <div class="position-container" id="cardlid3" style="top: 70%; left: 40%; transform: translate(-50%, -50%);">
+          <div class="position" data-position="CB" draggable="true"></div>
+          <p class="position-name">CB</p>
+        </div>
+        <div class="position-container" id="cardlid4" style="top: 70%; left: 60%; transform: translate(-50%, -50%);">
+          <div class="position" data-position="CB" draggable="true"></div>
+          <p class="position-name">CB</p>
+        </div>
+        <div class="position-container" id="cardlid5" style="top: 70%; left: 80%; transform: translate(-50%, -50%);">
+          <div class="position" data-position="RB" draggable="true"></div>
+          <p class="position-name">RB</p>
+        </div>
+      
+        <!-- Midfielders -->
+        <div class="position-container" id="cardlid6" style="top: 50%; left: 30%; transform: translate(-50%, -50%);">
+          <div class="position" data-position="CM" draggable="true"></div>
+          <p class="position-name">CM</p>
+        </div>
+        <div class="position-container" id="cardlid7" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+          <div class="position" data-position="CM" draggable="true"></div>
+          <p class="position-name">CM</p>
+        </div>
+        <div class="position-container" id="cardlid8" style="top: 50%; left: 70%; transform: translate(-50%, -50%);">
+          <div class="position" data-position="CM" draggable="true"></div>
+          <p class="position-name">CM</p>
+        </div>
+      
+        <!-- Forwards -->
+        <div class="position-container" id="cardlid9" style="top: 30%; left: 30%; transform: translate(-50%, -50%);">
+          <div class="position" data-position="LW" draggable="true"></div>
+          <p class="position-name">LW</p>
+        </div>
+        <div class="position-container" id="cardlid10" style="top: 30%; left: 50%; transform: translate(-50%, -50%);">
+          <div class="position" data-position="ST" draggable="true"></div>
+          <p class="position-name">ST</p>
+        </div>
+        <div class="position-container" id="cardlid11" style="top: 30%; left: 70%; transform: translate(-50%, -50%)">
+          <div class="position" data-position="RW" draggable="true"></div>
+          <p class="position-name">RW</p>
+        </div>
       </div>
-
-
-      <!-- Form -->
-
+      
+    <div>
    
-  <form id="player_info">
-    <label for="name">Full Name</label>
-    <input type="text" name="name" id="name" required />
-    <br>
 
-    <label for="position">Position</label>
-    <select name="position" id="position">
-      <option value="GK">GK</option>
-      <option value="CB">CB</option>
-      <option value="CM">CM</option>
-      <option value="CDM">CDM</option>
-      <option value="LM">LM</option>
-      <option value="RM">RM</option>
-      <option value="ST">ST</option>
-    </select>
-    <br>
+      <div id="player-selection">
+        <h2>Select a Player</h2>
+     
+  <section id="add-player-section">
+  
+  <form id="add-player-form" style="display: flex; flex-direction: column;gap: 30px;">
+    <div class="playerData" >
+    <label for="name">Name:
+    <input type="text" id="name" name="name" required style="margin-left: 36px;" />
+  </label> 
+    <label for="position">Position:
+   <!-- <select id="position" name="position" required>
+     <option value="">Goalkeeper (GK)</option>
+      <option value="">Left Back (LB)</option>
+      <option value="CB">Center Back (CB)</option>
+      <option value="RB">Right Back (RB)</option>
+      <option value="CM">Center Midfielder (CM)</option>
+      <option value="LW">Left Wing (LW)</option>
+      <option value="ST">Striker (ST)</option>
+      <option value="RW">Right Wing (RW)</option>
+    </select> -->
+    <input type="text" id="position" value ="" name="name" required style="margin-left: 36px;" />
 
-    <label for="nationality">Nationality</label>
-    <input type="text" name="nationality" id="nationality" />
-    <br>
+  </div>
+  <div style="display: flex;justify-content: space-between;">
+  </label> 
+    <label for="photo">Photo URL:
+<input type="url" id="photo" name="photo" required />
+</label>
+    <label for="flag">Flag URL:
+    <input type="url" id="flag" name="flag" required />
+</label>
+</div>
+    <label for="logo">Club Logo URL:
+    <input type="url" id="logo" name="logo" required style="width: 100%;"/>
+</label><br>
 
-    <label for="club">Club</label>
-    <input type="text" name="club" id="club" />
-    <br>
-
-    <label for="rating">Rating</label>
-    <input type="number" name="rating" id="rating" />
-    <br>
-
-    <label for="pace">Pace</label>
-    <input type="number" name="pace" id="pace" />
-    <br>
-
-    <label for="shooting">Shooting</label>
-    <input type="number" name="shooting" id="shooting" />
-    <br>
-
-    <label for="passing">Passing</label>
-    <input type="number" name="passing" id="passing" />
-    <br>
-
-    <label for="dribbling">Dribbling</label>
-    <input type="number" name="dribbling" id="dribbling" />
-    <br>
-
-    <label for="defending">Defending</label>
-    <input type="number" name="defending" id="defending" />
-    <br>
-
-    <label for="physical">Physical</label>
-    <input type="number" name="physical" id="physical" />
-    <br>
-
+<div style="display: flex;align-items: center; justify-content: space-around;">
+  <div style="display: flex; flex-direction: column;">
+    <label for="pace">Pace:<br>
+    <input type="number" id="pace" name="pace" min="0" max="100" required />
+</label>
+    <label for="shooting">Shooting:<br>
+    <input type="number" id="shooting" name="shooting" min="0" max="100" required />
+</label>
+    <label for="passing">Passing:<br>
+    <input type="number" id="passing" name="passing" min="0" max="100" required />
+</label>
+</div>
+<div style="display: flex; flex-direction: column;">
+    <label for="dribbling">Dribbling:<br>
+    <input type="number" id="dribbling" name="dribbling" min="0" max="100" required />
+</label>
+    <label for="defending">Defending:<br>
+    <input type="number" id="defending" name="defending" min="0" max="100" required />
+</label>
+    <label for="physical">Physical:<br>
+    <input type="number" id="physical" name="physical" min="0" max="100" required />
+</label>
+</div>
+</div>
     <button type="submit">Add Player</button>
+  </form>
+</section>
+</div>
+
+<section id="player-display">
+  <h2>Players</h2>
+  <div id="player-list"></div>
+</section>
+
+
+
     </section>
 
-
-
-    <div class="player-list" id="player-list">
-    <h2>Added Players</h2>
-  </div>
-
-    <script src="script.js"></script>
+    <div id="replacement-pool" class="replacement-pool">
+      <h3>Replacement Players</h3>
+      <div class="replacement-players"></div>
+    </div>
+    </div>
+          <button id="reset-button">Reset</button>
+        </div>
+    <script src="script3.js"></script>
   </body>
 </html>
