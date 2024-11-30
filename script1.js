@@ -216,9 +216,7 @@ let draggedCard = null;
         ;}
         
 
-        document.querySelector("#reset-button").addEventListener("click", () => {
-            location.reload();
-        });
+     
         
 
         document.querySelector("#add-player-form").addEventListener("submit", (event) => {

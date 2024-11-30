@@ -247,10 +247,10 @@ justify-content: space-around;
   font-size: 0.9em;
   color: #7a1a46;
 }
-
+/* 
 #add-player-form{
-  /* display: ; */
-}
+  display: ; */
+
 .playerData{
   display: flex;
   flex-wrap: wrap;
@@ -262,3 +262,4 @@ justify-content: space-around;
 #position{
   width: 177px;
 }
+
