@@ -1,4 +1,4 @@
-body {
+ body {
   font-family: Arial, sans-serif;
   background-color: #ffe6f2; 
   color: #7a1a46;
@@ -16,7 +16,7 @@ h1 {
 .field {
   position: relative;
   width: 40.625em; 
-  height: 100dvh;
+  height: 100dvh; 
 
   /* margin: 0 auto; */
   /* background: #eee; */
@@ -262,4 +262,80 @@ justify-content: space-around;
 #position{
   width: 177px;
 }
+ 
+/*.badge-icons {
+  display: none;  Ensure they are hidden by default 
+    z-index: 10; Brings the icons to the front if they are hidden 
+}*/
+
+/* .update-icon, .delete-icon {
+  font-size: 20px; 
+  padding: 5px; 
+} */
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .field {
+    width: 80vw; /* Width adjustment for medium screens */
+    height: 80vh; /* Adjust height */
+  }
+
+  .position {
+    width: 7em; /* Slightly smaller for medium screens */
+    height: 7em; /* Slightly smaller for medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 1.8em; /* Adjust heading size */
+  }
+
+  .field {
+    width: 90vw; /* Full width for smaller screens */
+    height: 70vh; /* Adjust height */
+  }
+}
+
+@media (max-width: 768px) {
+  .field {
+    height: 60vh; /* Further reduce height on smaller devices */
+  }
+
+  .position {
+    width: 6em; /* Responsive adjustment */
+    height: 6em; /* Responsive adjustment */
+  }
+
+  .playerData {
+    flex-direction: column; /* Stacking for smaller devices */
+  }
+
+  /* Adjust Player Cards */
+  .player-card {
+    margin: 10px 0; /* Margin adjustment */
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding: 10px; /* Less padding on small screens */
+  }
+
+  h1 {
+    font-size: 1.5em; /* Font size adjustment */
+  }
+
+  .field {
+    height: 50vh; /* Smaller field height */
+  }
+
+  .position {
+    width: 5em; /* Smaller size for badges */
+    height: 5em; /* Smaller size for badges */
+  }
+}
+
+
 
