@@ -180,24 +180,6 @@ document.querySelector("#reset-button").addEventListener("click", () => {
 });
 
 
-// const cards = document.querySelectorAll(".position-container");
-// const badgeIcons = document.querySelectorAll(".badge-icons"); // Select all the badge icon containers
-
-// // Assuming you want to show/hide the badge-icons based on mouse events
-// cards.forEach((card, index) => {
-//   card.addEventListener("mousemove", () => {
-//     badgeIcons[index].style.display = 'block'; // Display badge icons on mouse over
-//   });
-
-//   card.addEventListener("mouseout", () => {
-//     badgeIcons[index].style.display = 'none'; // Hide badge icons on mouse out
-//   });
-// });
-
-// // Ensure badge icons are hidden by default
-// badgeIcons.forEach(icon => {
-//   icon.style.display = 'none'; // Initially hide all badge icons
-// });
 
 
   
