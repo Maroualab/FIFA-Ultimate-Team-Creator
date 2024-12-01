@@ -3,14 +3,20 @@ const playerList = document.querySelector("#player-list");
 let playersData = [];
 const replacementList = document.getElementById("replacement-players");
 let selectedBadge = null;
-// const cards = document.querySelectorAll(".position-container");
+let editMode = false;
+let playerEdit = null;
+
+
 
 fetch("players.json")
   .then((response) => response.json())
   .then((data) => {
     playersData = data.players || [];
+    playersData.forEach(player => displayPlayer(player));
   })
   .catch((error) => console.error("Error loading JSON:", error));
+
+
 
 positions.forEach((position) => {
   position.addEventListener("click", (event) => {
@@ -20,14 +26,28 @@ positions.forEach((position) => {
   });
 });
 
-document
-  .getElementById("add-player-form")
-  .addEventListener("submit", (event) => {
+
+document.getElementById("add-player-form").addEventListener("submit", (event) => {
     event.preventDefault();
+
+    const positionInput = document.querySelector("#position").value.trim(); 
+    const validPositions = ["GK", "LB", "CB", "RB", "CM", "LW", "ST", "RW"];
+  
+    //make sure to input a existing position
+    if (!validPositions.includes(positionInput)) {
+      alert("Please input a valid position!");
+      return;
+    }
+  
+    //make to  click a badge 
+    if (!selectedBadge) {
+      alert("Please click on a position card before adding a player!");
+      return;
+    }
 
     const newPlayer = {
       name: document.getElementById("name").value,
-      position: document.getElementById("position").value,
+      position: positionInput,
       photo: document.getElementById("photo").value,
       flag: document.getElementById("flag").value,
       logo: document.getElementById("logo").value,
@@ -44,93 +64,71 @@ document
     document.getElementById("add-player-form").reset();
   });
 
-function displayPlayer(player , event) {
-  const positionInput = document.querySelector("#position").value;
-
-  const validPositions = ["GK", "LB", "CB", "RB", "CM", "LW", "ST", "RW"];
-
-  isValid = false;
-  for (let position of validPositions) {
-    if (position === positionInput) {
-      isValid = true; 
-      break; 
-    }
-  }
-
-  if (!isValid) {
-    alert("Please input a valid position!");
-    return; 
-  }
-
-  if (!selectedBadge) {
-    alert("Please click on a position card before adding a player!");
-    return;
-  }
-
+function createPlayerCard(player) {
   const playerCard = document.createElement("div");
   playerCard.classList.add("player-card");
-  
+
   const playerPhoto = document.createElement("img");
   playerPhoto.src = player.photo;
   playerPhoto.alt = player.name;
   playerPhoto.classList.add("player-photo");
-  
+
   const playerName = document.createElement("h3");
   playerName.textContent = player.name;
-  
+
   const playerPosition = document.createElement("p");
   playerPosition.textContent = `Position: ${player.position}`;
-  
+
   const playerFlag = document.createElement("img");
   playerFlag.src = player.flag;
   playerFlag.alt = "Country";
   playerFlag.classList.add("player-flag");
-  
+
   const playerLogo = document.createElement("img");
   playerLogo.src = player.logo;
   playerLogo.alt = "Club";
   playerLogo.classList.add("player-logo");
-  
+
   const statsList = document.createElement("ul");
-  
+
   const paceItem = document.createElement("li");
   paceItem.textContent = `Pace: ${player.pace}`;
   statsList.appendChild(paceItem);
-  
+
   const shootingItem = document.createElement("li");
   shootingItem.textContent = `Shooting: ${player.shooting}`;
   statsList.appendChild(shootingItem);
-  
+
   const passingItem = document.createElement("li");
   passingItem.textContent = `Passing: ${player.passing}`;
   statsList.appendChild(passingItem);
-  
+
   const dribblingItem = document.createElement("li");
   dribblingItem.textContent = `Dribbling: ${player.dribbling}`;
   statsList.appendChild(dribblingItem);
-  
+
   const defendingItem = document.createElement("li");
   defendingItem.textContent = `Defending: ${player.defending}`;
   statsList.appendChild(defendingItem);
-  
+
   const physicalItem = document.createElement("li");
   physicalItem.textContent = `Physical: ${player.physical}`;
   statsList.appendChild(physicalItem);
-  
+
   const badgeIcons = document.createElement("span");
   badgeIcons.classList.add("badge-icons");
-  
+
   const deleteIcon = document.createElement("i");
   deleteIcon.classList.add("delete-icon", "icon");
   deleteIcon.textContent = "❌";
-  
+
   const updateIcon = document.createElement("i");
   updateIcon.classList.add("update-icon", "icon");
   updateIcon.textContent = "✎";
-  
+
   badgeIcons.appendChild(deleteIcon);
   badgeIcons.appendChild(updateIcon);
-  
+
   playerCard.appendChild(playerPhoto);
   playerCard.appendChild(playerName);
   playerCard.appendChild(playerPosition);
@@ -138,40 +136,75 @@ function displayPlayer(player , event) {
   playerCard.appendChild(playerLogo);
   playerCard.appendChild(statsList);
   playerCard.appendChild(badgeIcons);
-  
 
-  
+  return playerCard;
+}
 
+
+function displayPlayer(player) {
+
+  const playerCard = createPlayerCard(player);
 
   if (selectedBadge.querySelector(".player-card")) {
-    alert("This position is already filled!");
-    replacementList.appendChild(playerCard);
+    const confirmation = confirm("This position is already filled. Do you want to replace the existing player?");
+    
+
+    if (confirmation) {
+      const existingPlayerCard = selectedBadge.querySelector(".player-card");
+      selectedBadge.removeChild(existingPlayerCard);
+      selectedBadge.appendChild(playerCard);
+    } else  {
+      replacementList.appendChild(playerCard);
+    }
   } else {
     selectedBadge.appendChild(playerCard);
   }
 
+  const deleteIcon = playerCard.querySelector(".delete-icon");
   deleteIcon.addEventListener("click", () => {
     if (selectedBadge.contains(playerCard)) {
       selectedBadge.removeChild(playerCard);
     }
   });
 
-  
+  const updateIcon = playerCard.querySelector(".update-icon");
+  updateIcon.addEventListener("click", () => updateCard(player, playerCard));
+
   selectedBadge = null;
 }
 
+  document.querySelectorAll('.playerCard').forEach(card => {
+    const icon = card.querySelector('.icon');
+    
+    card.addEventListener('mouseover', () => {
+      icon.style.display = 'block'; 
+    });
+    
+    card.addEventListener('mouseout', () => {
+      icon.style.display = 'none'; 
+    });
+  });
+  
 
-document.querySelectorAll('.playerCard').forEach(card => {
-  const icon = card.querySelector('.icon');
-  
-  card.addEventListener('mouseover', () => {
-    icon.style.display = 'block'; 
-  });
-  
-  card.addEventListener('mouseout', () => {
-    icon.style.display = 'none'; 
-  });
-});
+
+function updateCard(player, playerCard) {
+  document.getElementById("name").value = player.name;
+  document.getElementById("position").value = player.position;
+  document.getElementById("photo").value = player.photo;
+  document.getElementById("flag").value = player.flag;
+  document.getElementById("logo").value = player.logo;
+  document.getElementById("pace").value = player.pace;
+  document.getElementById("shooting").value = player.shooting;
+  document.getElementById("passing").value = player.passing;
+  document.getElementById("dribbling").value = player.dribbling;
+  document.getElementById("defending").value = player.defending;
+  document.getElementById("physical").value = player.physical;
+
+  document.getElementById("add-player-form").querySelector("#add-player-button").textContent = "Save";
+  editMode = true;
+  playerEdit = { player, playerCard }; 
+}
+
 
 
 
@@ -180,24 +213,3 @@ document.querySelector("#reset-button").addEventListener("click", () => {
 });
 
 
-// const cards = document.querySelectorAll(".position-container");
-// const badgeIcons = document.querySelectorAll(".badge-icons"); // Select all the badge icon containers
-
-// // Assuming you want to show/hide the badge-icons based on mouse events
-// cards.forEach((card, index) => {
-//   card.addEventListener("mousemove", () => {
-//     badgeIcons[index].style.display = 'block'; // Display badge icons on mouse over
-//   });
-
-//   card.addEventListener("mouseout", () => {
-//     badgeIcons[index].style.display = 'none'; // Hide badge icons on mouse out
-//   });
-// });
-
-// // Ensure badge icons are hidden by default
-// badgeIcons.forEach(icon => {
-//   icon.style.display = 'none'; // Initially hide all badge icons
-// });
-
-
-  
