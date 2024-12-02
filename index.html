@@ -1,159 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Football Field Mockup</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Football Field Mockup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <body>
-    <!-- style="display: none;" -->
-    <h1>Football Formation</h1>
-    <section class=" main_container">
-      
-      <div class="field relative">
-      
-        <!-- Goalkeeper -->
-        <div class="position-container" id="cardlid1" style="top: 87%; left: 50%; transform: translate(-50%, -50%);">
-            <div class="position badge" data-position="GK" draggable="true"></div>
-                       
-          <p class="position-name">GK</p>
-        </div>
-      
-        <!-- Defenders -->
-        <div class="position-container" id="cardlid2" style="top: 70%; left: 20%; transform: translate(-50%, -50%);">
-          <div class="position badge" data-position="LB" draggable="true"></div>
-          <p class="position-name">LB</p>
-        </div>
-        <div class="position-container" id="cardlid3" style="top: 70%; left: 40%; transform: translate(-50%, -50%);">
-          <div class="position badge" data-position="CB" draggable="true"></div>
-                     <p class="position-name">CB</p>
-        </div>
-        <div class="position-container" id="cardlid4" style="top: 70%; left: 60%; transform: translate(-50%, -50%);">
-          <div class="position badge" data-position="CB" draggable="true"></div>
-                     <p class="position-name">CB</p>
-        </div>
-        <div class="position-container" id="cardlid5" style="top: 70%; left: 80%; transform: translate(-50%, -50%);">
-          <div class="position badge" data-position="RB" draggable="true"></div>
-                     <p class="position-name">RB</p>
-        </div>
-      
-        <!-- Midfielders -->
-        <div class="position-container" id="cardlid6" style="top: 50%; left: 30%; transform: translate(-50%, -50%);">
-          <div class="position badge" data-position="CM" draggable="true"></div>
-                     <p class="position-name">CM</p>
-        </div>
-        <div class="position-container" id="cardlid7" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
-          <div class="position badge " data-position="CM" draggable="true"></div>
-                     <p class="position-name">CM</p>
-        </div>
-        <div class="position-container" id="cardlid8" style="top: 50%; left: 70%; transform: translate(-50%, -50%);">
-          <div class="position badge" data-position="CM" draggable="true"></div>
-                     <p class="position-name">CM</p>
-        </div>
-      
-        <!-- Forwards -->
-        <div class="position-container" id="cardlid9" style="top: 30%; left: 30%; transform: translate(-50%, -50%);">
-          <div class="position badge" data-position="LW" draggable="true"></div>
-                     <p class="position-name">LW</p>
-        </div>
-        <div class="position-container" id="cardlid10" style="top: 30%; left: 50%; transform: translate(-50%, -50%);">
-          <div class="position badge" data-position="ST" draggable="true"></div>
-                     <p class="position-name">ST</p>
-        </div>
-        <div class="position-container" id="cardlid11" style="top: 30%; left: 70%; transform: translate(-50%, -50%)">
-          <div class="position badge" data-position="RW" draggable="true"></div>
-                     <p class="position-name">RW</p>
-        </div>
+<body>
+  <!-- Main heading for the page -->
+  <h1>Football Formation</h1>
+
+  <!-- Main container for the football field and player selection -->
+  <section class="main_container">
+    <!-- Football field with positions -->
+    <div class="field relative">
+      <!-- Goalkeeper position -->
+      <div class="position-container" id="cardlid1" style="top: 87%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="position badge" data-position="GK" draggable="true"></div>
+        <p class="position-name">GK</p>
       </div>
-      
-    <div>
-   
 
+      <!-- Defenders positions -->
+      <div class="position-container" id="cardlid2" style="top: 70%; left: 20%; transform: translate(-50%, -50%);">
+        <div class="position badge" data-position="LB" draggable="true"></div>
+        <p class="position-name">LB</p>
+      </div>
+      <div class="position-container" id="cardlid3" style="top: 70%; left: 40%; transform: translate(-50%, -50%);">
+        <div class="position badge" data-position="CB" draggable="true"></div>
+        <p class="position-name">CB</p>
+      </div>
+      <div class="position-container" id="cardlid4" style="top: 70%; left: 60%; transform: translate(-50%, -50%);">
+        <div class="position badge" data-position="CB" draggable="true"></div>
+        <p class="position-name">CB</p>
+      </div>
+      <div class="position-container" id="cardlid5" style="top: 70%; left: 80%; transform: translate(-50%, -50%);">
+        <div class="position badge" data-position="RB" draggable="true"></div>
+        <p class="position-name">RB</p>
+      </div>
+
+      <!-- Midfielders positions -->
+      <div class="position-container" id="cardlid6" style="top: 50%; left: 30%; transform: translate(-50%, -50%);">
+        <div class="position badge" data-position="CM" draggable="true"></div>
+        <p class="position-name">CM</p>
+      </div>
+      <div class="position-container" id="cardlid7" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="position badge" data-position="CM" draggable="true"></div>
+        <p class="position-name">CM</p>
+      </div>
+      <div class="position-container" id="cardlid8" style="top: 50%; left: 70%; transform: translate(-50%, -50%);">
+        <div class="position badge" data-position="CM" draggable="true"></div>
+        <p class="position-name">CM</p>
+      </div>
+
+      <!-- Forwards positions -->
+      <div class="position-container" id="cardlid9" style="top: 30%; left: 30%; transform: translate(-50%, -50%);">
+        <div class="position badge" data-position="LW" draggable="true"></div>
+        <p class="position-name">LW</p>
+      </div>
+      <div class="position-container" id="cardlid10" style="top: 30%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="position badge" data-position="ST" draggable="true"></div>
+        <p class="position-name">ST</p>
+      </div>
+      <div class="position-container" id="cardlid11" style="top: 30%; left: 70%; transform: translate(-50%, -50%)">
+        <div class="position badge" data-position="RW" draggable="true"></div>
+        <p class="position-name">RW</p>
+      </div>
+    </div>
+
+    <!-- Player selection and addition section -->
+    <section class="player-infos">
       <div id="player-selection">
         <h2>Select a Player</h2>
-     
-  <section id="add-player-section">
-  
-  <form id="add-player-form" style="display: flex; flex-direction: column;gap: 30px;">
-    <div class="playerData" >
-    <label for="name">Name:
-    <input type="text" id="name" name="name" required style="margin-left: 36px;" />
-  </label> 
-    <label for="position">Position:
-   <!-- <select id="position" name="position" required>
-     <option value="">Goalkeeper (GK)</option>
-      <option value="">Left Back (LB)</option>
-      <option value="CB">Center Back (CB)</option>
-      <option value="RB">Right Back (RB)</option>
-      <option value="CM">Center Midfielder (CM)</option>
-      <option value="LW">Left Wing (LW)</option>
-      <option value="ST">Striker (ST)</option>
-      <option value="RW">Right Wing (RW)</option>
-    </select> -->
-    <input type="text" id="position" value ="" name="position" required style="margin-left: 36px;" />
+        <section id="add-player-section">
+          <form id="add-player-form" style="display: flex; flex-direction: column; gap: 30px;">
+            <div class="playerData">
+              <label for="name">Name:
+                <input type="text" id="name" name="name" required style="margin-left: 36px;" />
+              </label>
+              <label for="position">Position:
+                <input type="text" id="position" value="" name="position" required style="margin-left: 36px;" />
+              </label>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <label for="photo">Photo URL:
+                <input type="url" id="photo" name="photo" required />
+              </label>
+              <label for="flag">Flag URL:
+                <input type="url" id="flag" name="flag" required />
+              </label>
+            </div>
+            <label for="logo">Club Logo URL:
+              <input type="url" id="logo" name="logo" required style="width: 100%;" />
+            </label><br>
+            <div style="display: flex; align-items: center; justify-content: space-around;">
+              <div style="display: flex; flex-direction: column;">
+                <label for="pace">Pace:<br>
+                  <input type="number" id="pace" name="pace" min="0" max="100" required />
+                </label>
+                <label for="shooting">Shooting:<br>
+                  <input type="number" id="shooting" name="shooting" min="0" max="100" required />
+                </label>
+                <label for="passing">Passing:<br>
+                  <input type="number" id="passing" name="passing" min="0" max="100" required />
+                </label>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label for="dribbling">Dribbling:<br>
+                  <input type="number" id="dribbling" name="dribbling" min="0" max="100" required />
+                </label>
+                <label for="defending">Defending:<br>
+                  <input type="number" id="defending" name="defending" min="0" max="100" required />
+                </label>
+                <label for="physical">Physical:<br>
+                  <input type="number" id="physical" name="physical" min="0" max="100" required />
+                </label>
+              </div>
+            </div>
+            <button type="submit" id="add-player-button">Add Player</button>
+          </form>
+        </section>
+      </div>
 
-  </div>
-  <div style="display: flex;justify-content: space-between;">
-  </label> 
-    <label for="photo">Photo URL:
-<input type="url" id="photo" name="photo" required />
-</label>
-    <label for="flag">Flag URL:
-    <input type="url" id="flag" name="flag" required />
-</label>
-</div>
-    <label for="logo">Club Logo URL:
-    <input type="url" id="logo" name="logo" required style="width: 100%;"/>
-</label><br>
-
-<div style="display: flex;align-items: center; justify-content: space-around;">
-  <div style="display: flex; flex-direction: column;">
-    <label for="pace">Pace:<br>
-    <input type="number" id="pace" name="pace" min="0" max="100" required />
-</label>
-    <label for="shooting">Shooting:<br>
-    <input type="number" id="shooting" name="shooting" min="0" max="100" required />
-</label>
-    <label for="passing">Passing:<br>
-    <input type="number" id="passing" name="passing" min="0" max="100" required />
-</label>
-</div>
-<div style="display: flex; flex-direction: column;">
-    <label for="dribbling">Dribbling:<br>
-    <input type="number" id="dribbling" name="dribbling" min="0" max="100" required />
-</label>
-    <label for="defending">Defending:<br>
-    <input type="number" id="defending" name="defending" min="0" max="100" required />
-</label>
-    <label for="physical">Physical:<br>
-    <input type="number" id="physical" name="physical" min="0" max="100" required />
-</label>
-</div>
-</div>
-    <button type="submit" id="add-player-button">Add Player</button>
-  </form>
-</section>
-</div>
-
-<section id="player-display">
-  <h2>Players</h2>
-  <div id="player-list"></div>
-</section>
-
-
-
+      <!-- Section to display added players -->
+      <!-- <div id="player-display">
+        <h2>Players</h2>
+        <div id="player-list"></div>
+      </div> -->
     </section>
+  </section>
 
-    <div id="replacement-pool" class="replacement-pool">
-      <h3>Replacement Players</h3>
-      <div id="replacement-players"></div>
-    </div>
-    </div>
-          <button id="reset-button">Reset</button>
-        </div>
-    <script src="script3.js"></script>
-  </body>
+  <!-- Replacement pool for players -->
+  <div id="replacement-pool" class="replacement-pool">
+    <h3>Replacement Players</h3>
+    <div id="replacement-players"></div>
+  </div>
+
+  <!-- Reset button to reload the page -->
+  <button id="reset-button" type="submit">Reset</button>
+
+  <!-- JavaScript file -->
+  <script src="script3.js"></script>
+</body>
+
 </html>

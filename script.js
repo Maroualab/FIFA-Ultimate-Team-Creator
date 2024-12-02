@@ -1,4 +1,5 @@
 const positions = document.querySelectorAll(".position");
+const playerList = document.querySelector("#player-list");
 let playersData = [];
 const replacementList = document.getElementById("replacement-players");
 let selectedBadge = null;
@@ -6,6 +7,14 @@ let editMode = false;
 let playerEdit = null;
 
 
+
+fetch("players.json")
+  .then((response) => response.json())
+  .then((data) => {
+    playersData = data.players || [];
+    playersData.forEach(player => displayPlayer(player));
+  })
+  .catch((error) => console.error("Error loading JSON:", error));
 
 
 
@@ -30,7 +39,7 @@ document.getElementById("add-player-form").addEventListener("submit", (event) =>
       return;
     }
   
-    //make sure to  click a badge 
+    //make to  click a badge 
     if (!selectedBadge) {
       alert("Please click on a position card before adding a player!");
       return;
@@ -68,7 +77,7 @@ function createPlayerCard(player) {
   playerName.textContent = player.name;
 
   const playerPosition = document.createElement("p");
-  playerPosition.textContent = ` ${player.position}`;
+  playerPosition.textContent = `Position: ${player.position}`;
 
   const playerFlag = document.createElement("img");
   playerFlag.src = player.flag;
@@ -83,27 +92,27 @@ function createPlayerCard(player) {
   const statsList = document.createElement("ul");
 
   const paceItem = document.createElement("li");
-  paceItem.textContent = `PAC ${player.pace}`;
+  paceItem.textContent = `Pace: ${player.pace}`;
   statsList.appendChild(paceItem);
 
   const shootingItem = document.createElement("li");
-  shootingItem.textContent = `SHO ${player.shooting}`;
+  shootingItem.textContent = `Shooting: ${player.shooting}`;
   statsList.appendChild(shootingItem);
 
   const passingItem = document.createElement("li");
-  passingItem.textContent = `PAS ${player.passing}`;
+  passingItem.textContent = `Passing: ${player.passing}`;
   statsList.appendChild(passingItem);
 
   const dribblingItem = document.createElement("li");
-  dribblingItem.textContent = `DRI ${player.dribbling}`;
+  dribblingItem.textContent = `Dribbling: ${player.dribbling}`;
   statsList.appendChild(dribblingItem);
 
   const defendingItem = document.createElement("li");
-  defendingItem.textContent = `DEF ${player.defending}`;
+  defendingItem.textContent = `Defending: ${player.defending}`;
   statsList.appendChild(defendingItem);
 
   const physicalItem = document.createElement("li");
-  physicalItem.textContent = `PHY ${player.physical}`;
+  physicalItem.textContent = `Physical: ${player.physical}`;
   statsList.appendChild(physicalItem);
 
   const badgeIcons = document.createElement("span");
@@ -194,10 +203,7 @@ function updateCard(player, playerCard) {
   document.getElementById("add-player-form").querySelector("#add-player-button").textContent = "Save";
   editMode = true;
   playerEdit = { player, playerCard }; 
- 
-
 }
-
 
 
 
@@ -205,15 +211,3 @@ function updateCard(player, playerCard) {
 document.querySelector("#reset-button").addEventListener("click", () => {
   location.reload();
 });
-
-
-// fetched the data but sice i am a beginner i didnt have time to implement it in my code 
-fetch("players.json")
-  .then((response) => response.json())
-  .then((data) => {
-    playersData = data.players || [];
-    playersData.forEach(player => createPlayerCard(player));
-    console.log(playersData);
-    
-  })
-  .catch((error) => console.error("Error loading JSON:", error));
