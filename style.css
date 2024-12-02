@@ -297,6 +297,11 @@ label {
 }
 
 
+#replacement-players{
+  display: flex;
+  gap: 5em;
+  }
+
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
